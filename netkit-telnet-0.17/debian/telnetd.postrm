@@ -1,0 +1,52 @@
+#!/bin/sh -e
+# $Id: telnetd.postrm,v 1.10 2002/09/22 04:51:49 herbert Exp $
+
+case "$1" in
+abort-install | abort-upgrade | upgrade | failed-upgrade)
+	;;
+remove | disappear)
+	home=~telnetd
+	set +e
+	userdel telnetd
+	err=$?
+	set -e
+	case $err in
+	0)
+		if [ "$home" = /usr/lib/telnetd ]; then
+			rmdir --ignore-fail-on-non-empty /usr/lib/telnetd || true
+		fi
+		;;
+	6)
+		;;
+	*)
+		exit $err
+		;;
+	esac
+
+	set +e
+	groupdel telnetd
+	err=$?
+	set -e
+	case $err in
+	0 | 6)
+		;;
+	*)
+		exit $err
+		;;
+	esac
+	;;
+purge)
+	# If netbase is not installed, then we don't need to do the remove.
+	if command -v update-inetd >/dev/null 2>&1; then
+		update-inetd --remove "#<off># telnet"
+	fi
+	;;
+*)
+	echo "$0: incorrect arguments: $*" >&2
+	exit 1
+	;;
+esac
+
+#DEBHELPER#
+
+exit 0

@@ -1,0 +1,12 @@
+#!/bin/sh -e
+
+case "$1" in
+upgrade)
+	## change the HOME dir of telnetd to something not /
+	if [ -n "$2" ] && dpkg --compare-versions "$2" lt 0.17-27; then
+		usermod -d /nonexistent telnetd 
+	fi
+	;;
+esac
+
+#DEBHELPER#

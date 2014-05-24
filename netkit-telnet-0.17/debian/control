@@ -1,0 +1,27 @@
+Source: netkit-telnet
+Section: net
+Priority: standard
+Maintainer: Alberto Gonzalez Iniesta <agi@inittab.org>
+Standards-Version: 3.7.2.2
+Build-Depends: debhelper (>> 4.0.1), libncurses-dev
+
+Package: telnet
+Architecture: any
+Depends: netbase, ${shlibs:Depends}
+Replaces: netstd
+Provides: telnet-client
+Description: The telnet client
+ The telnet command is used for interactive communication with another host
+ using the TELNET protocol.
+
+Package: telnetd
+Architecture: any
+Priority: optional
+Depends: adduser, openbsd-inetd | inet-superserver, passwd, ${shlibs:Depends}
+Replaces: netstd
+Provides: telnet-server
+Conflicts: suidmanager (<< 0.50)
+Description: The telnet server
+ The in.telnetd program is a server which supports the DARPA telnet interactive
+ communication protocol.
+
