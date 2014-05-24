@@ -1,0 +1,34 @@
+Format: 1.8
+Date: Sat, 24 May 2014 02:22:20 +0100
+Source: netkit-telnet
+Binary: telnet telnetd
+Architecture: source i386
+Version: 0.17-36+nmu1
+Distribution: unstable
+Urgency: low
+Maintainer: Alberto Gonzalez Iniesta <agi@inittab.org>
+Changed-By: Marcos Marado <mindboosternoori@gmail.com>
+Description: 
+ telnet     - The telnet client
+ telnetd    - The telnet server
+Closes: 338494
+Changes: 
+ netkit-telnet (0.17-36+nmu1) unstable; urgency=low
+ .
+   * Non-maintainer upload.
+   * Fixing how we handle UTF8 characters. (Closes: #338494)
+Checksums-Sha1: 
+ 754cedf41ca706d866fb5f03978bd324e319431d 863 netkit-telnet_0.17-36+nmu1.dsc
+ 05d9c41ea69b711e67b835df49719183358ecadf 28221 netkit-telnet_0.17-36+nmu1.diff.gz
+ 986d98a70a850c7bb095cd3a1dbe26385dc072cf 69872 telnet_0.17-36+nmu1_i386.deb
+ aa3dd76d085f22f61c5ec842b258372e2f7239c8 44100 telnetd_0.17-36+nmu1_i386.deb
+Checksums-Sha256: 
+ 0fbe277611e9a03f79a32dda330f6fe125aea238f87a922d353032848e6ea27b 863 netkit-telnet_0.17-36+nmu1.dsc
+ d17ffb54a647578774468594165c8ebad0db8a77dd065948925615b09ee2b64e 28221 netkit-telnet_0.17-36+nmu1.diff.gz
+ b3c75d95e6a8960d05e8cb29ab476c86f43a50c571095a5c985154941605dc4c 69872 telnet_0.17-36+nmu1_i386.deb
+ fd9e0dea76f155791a5a16e12d46f0077b411c12cf2e663b9c4ff067fe436d25 44100 telnetd_0.17-36+nmu1_i386.deb
+Files: 
+ 134262f69a649b0d6b552b8a8eba06bf 863 net standard netkit-telnet_0.17-36+nmu1.dsc
+ 90750004b74bc3a2b60c1f9ee39fa06f 28221 net standard netkit-telnet_0.17-36+nmu1.diff.gz
+ 03084ae6eed5df7dcb33024ee53c6621 69872 net standard telnet_0.17-36+nmu1_i386.deb
+ 620c699990c13a7653f9babf9ed6991b 44100 net optional telnetd_0.17-36+nmu1_i386.deb

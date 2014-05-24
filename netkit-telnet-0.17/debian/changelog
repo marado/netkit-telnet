@@ -1,3 +1,10 @@
+netkit-telnet (0.17-36+nmu1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fixing how we handle UTF8 characters. (Closes: #338494)
+
+ -- Marcos Marado <mindboosternoori@gmail.com>  Sat, 24 May 2014 02:22:20 +0100
+
 netkit-telnet (0.17-36) unstable; urgency=low
 
   [ Ian Beckwith ]
